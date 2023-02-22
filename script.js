@@ -71,6 +71,8 @@ contentInputs.forEach(input => {
         else{
             result.innerHTML = entry.value
         }
+
+        save(result)
     })
 })
 
@@ -131,10 +133,11 @@ if(!(arrayLocalStorage == null || arrayLocalStorage == "")){
 function elementObject(element){
     this.id = element.getAttribute("id"),
     this.style = element.getAttribute("style")
+    this.text = element.innerHTML
 }
 
 function save(element){
-
+    console.log(element)
     let index = -1
 
     for (i in arrayElements){
@@ -158,6 +161,11 @@ function save(element){
 
 for (item of arrayElements){
     document.getElementById(item.id).setAttribute("style", item.style)
+    if(!(item.id == "body")){
+        if(item.text != "" && item.text != null){
+            document.getElementById(item.id).innerHTML = item.text
+        }
+    }
 }
 
 document.title = document.getElementById("name-character").innerText
