@@ -202,6 +202,11 @@ function check(){
     if(document.getElementById("name-character").innerHTML != "NOME DO PERSONAGEM"){
         document.title = document.getElementById("name-character").innerHTML
     }
+
+    contentInputs.forEach(input =>{
+        console.log(input.value)
+        input.value = document.getElementById(input.id.replace("-input", "")).innerHTML
+    })
 }
 
 
