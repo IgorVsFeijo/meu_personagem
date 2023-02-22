@@ -72,4 +72,45 @@ contentInputs.forEach(input => {
             result.innerHTML = entry.value
         }
     })
-});
+})
+
+let editorInputs = []
+
+for(item of document.querySelectorAll(".appearance > div input, .appearance > div select")){
+    editorInputs.push(item)
+}
+
+editorInputs.forEach(input => {
+    input.addEventListener("change", (e)=>{
+        space = e.target
+
+        if(space.id == "page-backgroundColor"){
+            document.body.style.backgroundColor = space.value
+        }
+        else{
+            ce = document.getElementById("current-element").value
+            element = document.getElementById(ce)
+
+            if(space.id == "font-input"){
+
+            }
+            else{
+                console.log(space.id)
+                
+                if(space.id == "fontSize"){
+                    if(space.value < 10 || space.value > 48){
+                        space.value < 10 ? space.value = 10 : space.value = 48
+                    }
+
+                    element.style[space.id] = `${space.value}px`
+
+                }
+                else{
+                    element.style[space.id] = space.value
+
+                }
+                
+            }
+        }
+    })
+})
