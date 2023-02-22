@@ -179,20 +179,22 @@ check()
 function check(){
     console.log("chamou")
     arraySpaces.forEach(ch => {
-    console.log(ch.innerHTML.trim())
-    if(ch.innerHTML.trim() == ""){
-        switch(ch.id){
-            case "name-character":
-                ch.innerHTML = "NOME DO PERSONAGEM"
-            break
-            case "subtitle":
-                ch.innerHTML = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident officia!"
-            break
-            case "text":
-                ch.innerHTML = "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis neque dignissimos dolore tenetur assumenda ratione nihil velit commodi distinctio unde. Natus perspiciatis possimus quidem deserunt fuga iusto itaque magni totam?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quia laudantium ducimus dolorem ut libero, architecto tempora omnis sed odit ratione at veniam aspernatur fugit mollitia. Incidunt eum itaque esse.</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci fugit possimus, temporibus excepturi ipsam, autem exercitationem odio soluta officia molestias perferendis omnis, nihil porro maxime incidunt placeat impedit nisi? Perferendis?</p>"
-            break
-            }
-        }
+        setTimeout(()=>{
+            if(ch.innerHTML.trim() == ""){
+                switch(ch.id){
+                    case "name-character":
+                        ch.innerHTML = "NOME DO PERSONAGEM"
+                    break
+                    case "subtitle":
+                        ch.innerHTML = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident officia!"
+                    break
+                    case "text":
+                        ch.innerHTML = "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis neque dignissimos dolore tenetur assumenda ratione nihil velit commodi distinctio unde. Natus perspiciatis possimus quidem deserunt fuga iusto itaque magni totam?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quia laudantium ducimus dolorem ut libero, architecto tempora omnis sed odit ratione at veniam aspernatur fugit mollitia. Incidunt eum itaque esse.</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci fugit possimus, temporibus excepturi ipsam, autem exercitationem odio soluta officia molestias perferendis omnis, nihil porro maxime incidunt placeat impedit nisi? Perferendis?</p>"
+                    break
+                    }
+                }  
+        }, 3000)
+    
     })
 
     if(document.getElementById("img").src.trim == ""){
