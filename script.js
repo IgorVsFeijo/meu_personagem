@@ -92,7 +92,8 @@ editorInputs.forEach(input => {
             element = document.getElementById(ce)
 
             if(space.id == "font-input"){
-
+                console.log(space.innerHTML)
+                element.style.fontFamily = space.value
             }
             else{
                 console.log(space.id)
@@ -109,6 +110,7 @@ editorInputs.forEach(input => {
                     element.style[space.id] = space.value
 
                 }
+
                 
             }
         }
