@@ -168,10 +168,6 @@ for (item of arrayElements){
     }
 }
 
-if(document.getElementById("img").src.trim == ""){
-    document.getElementById("img").src = "imgs/edit-icon.svg"
-}
-
 let arraySpaces = []
 
 for(item of document.getElementsByClassName("about")[0].children){
@@ -198,6 +194,14 @@ function check(){
             }
         }
     })
+
+    if(document.getElementById("img").src.trim == ""){
+        document.getElementById("img").src = "imgs/edit-icon.svg"
+    }
+
+    if(document.getElementById("name-character").innerHTML != "NOME DO PERSONAGEM"){
+        document.title = document.getElementById("name-character").innerHTML
+    }
 }
 
 
