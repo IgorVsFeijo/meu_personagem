@@ -63,6 +63,11 @@ contentInputs.forEach(input => {
             console.log(result)
         }
 
+        else if(entry.getAttribute("type") == "file"){
+            result = document.getElementById(entry.id.replace("-file", ""))
+            result.setAttribute("src", URL.createObjectURL(entry.files[0]))
+        }
+
         else{
             result.innerHTML = entry.value
         }
