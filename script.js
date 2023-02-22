@@ -65,14 +65,12 @@ contentInputs.forEach(input => {
 
         else if(entry.getAttribute("type") == "file"){
             result = document.getElementById(entry.id.replace("-file", ""))
+            console.log(entry.files[0])
             result.setAttribute("src", URL.createObjectURL(entry.files[0]))
         }
 
         else{
             result.innerHTML = entry.value
-            if(entry.getAttribute("type") == "color"){
-                entry.style.content
-            }
         }
         check()
         save(result)
@@ -119,6 +117,8 @@ editorInputs.forEach(input => {
 
                 
             }
+
+
 
             save(element)
         }
@@ -211,15 +211,19 @@ function check(){
         document.title = document.getElementById("name-character").innerHTML
     }
 
-    console.log(document.getElementById("link").src)
-
-    if(document.getElementById("link").src.trim == ""){
-        document.getElementById("link").src = "imgs/edit-icon.svg"
+    if(document.getElementById("link").src == window.location.href){
+        document.getElementById("link").src = "imgs/user-image-photo-icon.svg"
     }
 
     contentInputs.forEach(input =>{
         console.log(input.value)
         input.value = document.getElementById(input.id.replace("-input", "")).innerHTML
+    })
+
+    editorInputs.forEach(input =>{
+        if(input.getAttribute("type") == color){
+            console.log(input.style.content)
+        }
     })
 }
 
