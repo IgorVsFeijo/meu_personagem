@@ -70,6 +70,9 @@ contentInputs.forEach(input => {
 
         else{
             result.innerHTML = entry.value
+            if(entry.getAttribute("type") == "color"){
+                entry.style.content
+            }
         }
         check()
         save(result)
@@ -133,6 +136,7 @@ if(!(arrayLocalStorage == null || arrayLocalStorage == "")){
 function elementObject(element){
     this.id = element.getAttribute("id"),
     this.style = element.getAttribute("style")
+    this.src = element.getAttribute("src")
     this.text = element.innerHTML
 }
 
@@ -159,11 +163,17 @@ function save(element){
     localStorage.setItem("array", JSON.stringify(arrayElements))
 }
 
+console.log(arrayElements)
+
 for (item of arrayElements){
     document.getElementById(item.id).setAttribute("style", item.style)
     if(!(item.id == "body")){
         if(item.text != "" && item.text != null){
             document.getElementById(item.id).innerHTML = item.text
+        }
+
+        if(item.id == "link"){
+            document.getElementById(item.id).src = item.src
         }
     }
 }
@@ -197,12 +207,14 @@ function check(){
     
     })
 
-    if(document.getElementById("img").src.trim == ""){
-        document.getElementById("img").src = "imgs/edit-icon.svg"
-    }
-
     if(document.getElementById("name-character").innerHTML != "NOME DO PERSONAGEM"){
         document.title = document.getElementById("name-character").innerHTML
+    }
+
+    console.log(document.getElementById("link").src)
+
+    if(document.getElementById("link").src.trim == ""){
+        document.getElementById("link").src = "imgs/edit-icon.svg"
     }
 
     contentInputs.forEach(input =>{
