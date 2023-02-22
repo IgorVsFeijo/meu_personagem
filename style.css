@@ -228,4 +228,8 @@ input::placeholder, select::placeholder, textarea::placeholder{
     .character-container > article{
         padding: 40px 25px;
     }
+
+    #edit-button{
+        transform: translateX(-100%);
+    }
 }
