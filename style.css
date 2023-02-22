@@ -230,6 +230,6 @@ input::placeholder, select::placeholder, textarea::placeholder{
     }
 
     #edit-button{
-        transform: translateX(-100%);
+        transform: translate(-100%, -80%);
     }
 }
