@@ -219,3 +219,13 @@ input::placeholder, select::placeholder, textarea::placeholder{
     }
 
 }
+
+@media screen and (max-width: 400px){
+    main{
+        padding: 0;
+    }
+
+    .character-container > article{
+        padding: 40px 25px;
+    }
+}
