@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="model_by_iguinho.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Personagem! &lt3</title>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="social-media">
+            <a href="https://www.instagram.com/igorvsfeijo/">
+                <img src="social_medias/ig-instagram-icon.svg" alt="Icon do Instagram">
+            </a>
+
+            <a href="https://www.linkedin.com/in/igor-vinicius-silveira-feij%C3%B3-052994222">
+                <img src="social_medias/linkedin-app-icon.svg" alt="Icon Linkedin">
+            </a>
+
+            <a href="https://github.com/IgorVsFeijo">
+                <img src="social_medias/github-logo-6533.svg" alt="Icon Github">
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section class="character-container">
+            <article class="photo-space">
+                <img src="imgs/user-image-photo-icon.svg" alt="Foto do Personagem" id="link">
+            </article>
+            <article class="about">
+
+                <h1 id="name-character">
+                    NOME DO PERSONAGEM
+                </h1>
+
+                <strong id="subtitle">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident officia!
+                </strong>
+
+                <div id="text">
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis neque dignissimos dolore tenetur assumenda ratione nihil velit commodi distinctio unde. Natus perspiciatis possimus quidem deserunt fuga iusto itaque magni totam?</p>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quia laudantium ducimus dolorem ut libero, architecto tempora omnis sed odit ratione at veniam aspernatur fugit mollitia. Incidunt eum itaque esse.</p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci fugit possimus, temporibus excepturi ipsam, autem exercitationem odio soluta officia molestias perferendis omnis, nihil porro maxime incidunt placeat impedit nisi? Perferendis?</p>
+                    
+                </div>
+
+                <button aria-label="edit" id="edit-button" onclick="editionMode()">
+                    <img src="imgs/edit-icon.svg" alt="Editar">
+                </button>
+
+            </article>
+            
+        </section>
+
+        <section class="edit-page-container">
+            <h1>MODO DE EDIÇÃO</h1>
+            <section>
+                <article class="content">
+                    <h2>Conteúdo</h2>
+                    <div>
+    
+                        <p>Nome do Personagem</p>
+    
+                        <input type="text" id="name-character-input">
+                        <p>Subtítulo</p>
+    
+                        <textarea name="subtitle-input" id="subtitle-input" rows="4"></textarea>
+    
+                        <p>Texto</p>
+    
+                        <textarea name="text-input" id="text-input" rows="10"></textarea>
+    
+                        <p>Link da Imagem</p>
+    
+                        <input type="text" id="link-input">
+                    </div>  
+                </article>
+                <article class="appearance">
+                    <h2>Aparência</h2>
+
+                    <div>
+                        <p>Cor de Fundo da Página</p>
+                        <input type="color" id="page-backgroundColor">
+                        <p>Elemento</p>
+                        <select name="current-element" id="current-element">
+                            <option value="name-character" selected>Nome do Personagem</option>
+                            <option value="subtitle">Frase Destacada</option>
+                            <option value="text">Texto</option>
+                        </select>
+                        <p>Fonte</p>
+                        <select name="text" id="font-input">
+                        </select>
+                        <p>Tamanho</p>
+                        <input type="number" min="10" max="48">
+                        <p>Cor</p>
+                        <input type="color" class="color" id="color">
+                        <p>Cor de Fundo</p>
+                        <input type="color" class="color" id="backgroundColor">
+                        
+                    </div>
+
+                </article>
+            </section>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <div class="web_developer">
+            <p><em>Copyright &copy; Site by Iguinho</em></p>
+        </div>
+    </footer>
+</body>
+
+<script src="script.js"></script>
+</html>
