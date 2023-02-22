@@ -34,11 +34,6 @@ main{
     height: auto;
 }
 
-.photo-space{
-    display: flex;
-    align-items: center;
-}
-
 #photo-character{
     width: 100%;
 }
@@ -161,4 +156,46 @@ select, .color{
 input::placeholder, select::placeholder, textarea::placeholder{
     font-size: 0.7em;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1200px){
+
+    .edit-page-container{
+        margin-top: 60px;
+    }
+    
+}
+
+
+@media screen and (max-width: 980px){
+
+   .character-container{
+    max-height: none;
+    flex-direction: column;
+   }
+
+   .character-container > article{
+    width: 100%;
+    padding: 0;
+   }
+
+}
+
+@media screen and (max-width: 5300px){
+    .edit-page-container{
+        min-width: 0px;
+        margin: 10px;
+        width: 100%;
+    }
+
+    .edit-page-container > section{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content{
+        margin: 0;
+    }
+
 }
