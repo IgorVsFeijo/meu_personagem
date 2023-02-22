@@ -86,6 +86,7 @@ editorInputs.forEach(input => {
 
         if(space.id == "page-backgroundColor"){
             document.body.style.backgroundColor = space.value
+            save(document.body)
         }
         else{
             ce = document.getElementById("current-element").value
@@ -113,6 +114,50 @@ editorInputs.forEach(input => {
 
                 
             }
+
+            save(element)
         }
     })
 })
+
+let arrayElements = []
+let arrayLocalStorage = JSON.parse(localStorage.getItem("array"))
+
+if(!(arrayLocalStorage == null || arrayLocalStorage == "")){
+    arrayElements = arrayLocalStorage
+    console.log(arrayElements)
+}
+
+function elementObject(element){
+    this.id = element.getAttribute("id"),
+    this.style = element.getAttribute("style")
+}
+
+function save(element){
+
+    let index = -1
+
+    for (i in arrayElements){
+        if(arrayElements[i].id == element.getAttribute("id"))
+            index = i
+    }
+
+    if(index == -1){
+        arrayElements.push(new elementObject(element))
+    }
+
+    else{
+        arrayElements[index] = new elementObject(element)
+    }
+
+    console.log(arrayElements)
+    
+    
+    localStorage.setItem("array", JSON.stringify(arrayElements))
+}
+
+for (item of arrayElements){
+    document.getElementById(item.id).setAttribute("style", item.style)
+}
+
+document.title = document.getElementById("name-character").innerText
